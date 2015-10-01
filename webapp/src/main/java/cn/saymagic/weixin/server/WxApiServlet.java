@@ -19,6 +19,7 @@ import org.apache.log4j.Logger;
 
 import cn.saymagic.weixin.server.bean.MsgRequest;
 import cn.saymagic.weixin.server.handler.BaseHandler;
+import cn.saymagic.weixin.server.handler.CustomTextHandler;
 import cn.saymagic.weixin.server.handler.EventHandler;
 import cn.saymagic.weixin.server.handler.TextHandler;
 import cn.saymagic.weixin.server.util.MsgXmlUtil;
@@ -69,7 +70,7 @@ public class WxApiServlet extends HttpServlet {
 				handler = new EventHandler();				
 			}
 			else if("text".equals(msgRequest.getMsgType())){
-				handler = new TextHandler();				
+				handler = new CustomTextHandler();				
 			}
 			else if("voice".equals(msgRequest.getMsgType())){
 				handler = new TextHandler();				
